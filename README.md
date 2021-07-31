@@ -1,5 +1,5 @@
 
-<a href="https://task-manager-front-end.vercel.app" target="https://task-manager-front-end.vercel.app"</a>
+<a href="https://task-manager-front-end.vercel.app" target="https://task-manager-front-end.vercel.app"></a>
 
 This is a todo list with user authentication.
 <br></br>                                                                                             
