@@ -1,3 +1,10 @@
+https://task-manager-front-end.vercel.app
+
+This is a todo list with user authentication.
+The backend was made by following a Udemy course, I made the frontend afterward to practice the MERN stack and Redux.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
