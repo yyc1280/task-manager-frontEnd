@@ -1,8 +1,8 @@
 
-<a href="https://task-manager-front-end.vercel.app" target="https://task-manager-front-end.vercel.app"></a>
+<a href="https://task-manager-front-end.vercel.app" target="_blank">https://task-manager-front-end.vercel.app</a>
 
 This is a todo list with user authentication.
-<br></br>                                                                                             
+<br></br>
 The backend was made by following a Udemy course, I made the frontend afterward to practice the MERN stack and Redux.
 
 
