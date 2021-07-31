@@ -8,6 +8,7 @@ import { LinkContainer } from "react-router-bootstrap"
 const CreateTask = props => {
   const history = useHistory()
   const [description, setDescription] = useState("")
+  const [loading, setLoading] = useState(false)
   const token = JSON.parse(localStorage.getItem("token"))
 
   const handleDescription = e => {
@@ -16,6 +17,7 @@ const CreateTask = props => {
 
   const handleCreate = e => {
     e.preventDefault()
+    setLoading(true)
     createTask(description, props.token)
       .then(response => {
         history.push("/tasks")
@@ -26,16 +28,15 @@ const CreateTask = props => {
   }
 
   return (
-    <div className="m-5  d-flex align-items-center flex-column">
-      {!token && (
+    <div className="m-5  d-flex align-items-center flex-column text-light">
+      {!token ? (
         <>
-          <h1>Please Login First</h1>
+          <h1 className="my-5">Please Login First</h1>
           <LinkContainer to="/login">
             <Button size="lg">Login</Button>
           </LinkContainer>
         </>
-      )}
-      {token && (
+      ) : (
         <Form onSubmit={handleCreate} className="w-75">
           <Form.Group className="mb-3" controlId="desc">
             <Form.Label>Description</Form.Label>
@@ -43,7 +44,7 @@ const CreateTask = props => {
               required
               onChange={handleDescription}
               type="text"
-              placeholder="Task"
+              placeholder="Task Description"
             />
           </Form.Group>
 
@@ -51,6 +52,11 @@ const CreateTask = props => {
             Create
           </Button>
         </Form>
+      )}
+      {loading && (
+        <div className="spinner-border text-light" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
       )}
     </div>
   )

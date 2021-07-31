@@ -2,6 +2,7 @@ import {
   CREATE_USER,
   CREATE_USER_FAILED,
   LOGIN,
+  LOGIN_SUCCESS,
   LOGOUT,
   LOGIN_FAILED,
   LOAD_USER,
@@ -12,6 +13,7 @@ const INITIAL_STATE = {
   user: null,
   msg: null,
   token: null,
+  loading: false,
 }
 
 const authReducer = (state = INITIAL_STATE, action) => {
@@ -21,17 +23,24 @@ const authReducer = (state = INITIAL_STATE, action) => {
         ...state,
         user: action.payload.user,
         token: action.payload.token,
+        loading: action.payload.loading,
       }
     case CREATE_USER_FAILED:
       return { ...state, msg: action.payload }
     case LOGIN:
       return {
         ...state,
+        loading: true,
+      }
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
         user: action.payload.user,
         token: action.payload.token,
+        loading: action.payload.loading,
       }
     case LOGIN_FAILED:
-      return { ...state, msg: action.payload }
+      return { ...state, msg: action.payload, loading: false }
     case LOGOUT:
       return { ...state, user: null, token: null }
     case LOAD_USER:

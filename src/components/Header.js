@@ -13,7 +13,7 @@ const Header = props => {
     history.push("/")
   }
   return (
-    <Navbar className="navbar bg-light" expand="lg">
+    <Navbar className="navbar" bg="dark" variant="dark" expand="lg">
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>Task Manager</Navbar.Brand>

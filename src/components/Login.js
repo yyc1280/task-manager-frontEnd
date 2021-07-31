@@ -54,6 +54,11 @@ const Login = props => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+        {props.loading && (
+          <div className="spinner-border text-light ms-5 pt-2" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        )}
       </Form>
     </div>
   )
@@ -62,6 +67,7 @@ const mapStateToProps = state => {
   return {
     msg: state.user.msg,
     token: state.user.token,
+    loading: state.user.loading,
   }
 }
 export default connect(mapStateToProps, { login, removeMsg })(Login)

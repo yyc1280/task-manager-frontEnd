@@ -6,10 +6,10 @@ import TaskList from "./TaskList"
 
 const Home = props => {
   return (
-    <div className="p-5 h-75 d-flex justify-content-center align-items-center">
-      <div className="w-60 d-flex flex-column justify-content-around">
-        <h1 className="mb-5">Welcome to Task Manager App</h1>
-        <div className="d-flex justify-content-around">
+    <div className="mt-3 mx-3 h-75 d-flex justify-content-center align-items-center text-light">
+      <div className="w-60 d-flex flex-column">
+        <h1 className="text-center">Welcome to Task Manager App</h1>
+        <div className="d-flex justify-content-around mt-5">
           {!props.token && (
             <>
               <LinkContainer to="/signUp">

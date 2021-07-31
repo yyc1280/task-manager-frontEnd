@@ -14,7 +14,7 @@ const App = props => {
     props.loadUser()
   }, [props])
   return (
-    <div className="h-100">
+    <div className="h-100 bg-dark">
       <Router>
         <Header />
         <Switch>
