@@ -5,6 +5,7 @@ This is a todo list with user authentication.
 <br />
 The backend was made by following a Udemy course, I made the frontend afterward to practice the MERN stack and Redux.
 
+![alt text](https://github.com/yyc1280/task-manager-frontEnd/blob/main/3.png?raw=true)
 
 
 # Getting Started with Create React App
